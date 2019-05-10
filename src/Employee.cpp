@@ -14,6 +14,8 @@ void Employee::print() {
 
 void Employee::getInput() {
     cout << "Enter id : "; cin >> id;
-	cout << "Enter name : "; cin >> name;
-    cout << "Enter department : "; cin >> department;
+    char x;
+    cin.get(x);
+	cout << "Enter name : "; cin.getline(name, 20, '\n');
+    cout << "Enter department : "; cin.getline(department, 20, '\n');
 }

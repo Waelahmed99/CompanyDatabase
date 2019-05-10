@@ -7,7 +7,7 @@
 using namespace std;
 
 Database::Database() {
-    fileName = "Emplyees.txt";
+    fileName = "Employees.txt";
 }
 
 /* Files operations go here -> */
@@ -89,7 +89,9 @@ void Database::showEmp(int mode) {
                 visited = true;
             }
 		} else if (mode == 2) {
-            if (strcmp(name, emp.name) == 0 && emp.id != lastId && emp.id!=-1) {
+            string s1(emp.name), s2(name);
+            if ((strcmp(name, emp.name) == 0 || s1.find(s2) != std::string::npos)
+                    && emp.id != lastId && emp.id!=-1) {
                 emp.print();
                 lastId = emp.id;
                 visited = true;
@@ -97,7 +99,7 @@ void Database::showEmp(int mode) {
 		} else if (mode == 3) {
             if (strcmp(dep, emp.department) == 0 && emp.id != lastId && emp.id!=-1) {
                 emp.print();
-                lastId = id;
+                lastId = emp.id;
                 visited = true;
             }
 		}
@@ -182,8 +184,9 @@ void Database::deleteEmp() {
 
 // Clear all File data.
 void Database::clearData() {
-    fstream file;
-    file.open(fileName, ios::trunc);
+    ofstream  file;
+    file.open(fileName, ios::out | ios::trunc);
     file.close();
+
     cout << "Data deleted\n\n";
 }
