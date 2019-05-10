@@ -146,8 +146,10 @@ void Database::updateEmp () {
 	while (!file.eof()) {
 		file.read((char*)&emp, sizeof (emp) );
 		if (emp.id == id && emp.id != -1) {
-			cout << "\n\nEnter the new name : "; cin >> emp.name;
-			cout << "\nEnter the new department : "; cin >> emp.department;
+            char x;
+            cin.get(x);
+			cout << "\n\nEnter the new name : "; cin.getline(emp.name, 20, '\n');
+			cout << "\nEnter the new department : "; cin.getline(emp.department, 20, '\n');
 			file.seekp(file.tellg() - sizeof(emp), ios::beg);
 			file.write((char*)&emp, sizeof(emp));
 			break;
