@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1557502049 source:/home/wael/Desktop/CompanyFiles/main.cpp
+	<iostream>
+	"Employee.h"
+	"Database.h"
+
+1557499661 /home/wael/Desktop/CompanyFiles/include/Employee.h
+
+1557499840 source:/home/wael/Desktop/CompanyFiles/src/Employee.cpp
+	"Employee.h"
+	<iostream>
+
+1557502366 source:/home/wael/Desktop/CompanyFiles/src/Database.cpp
+	"Database.h"
+	<iostream>
+	<fstream>
+	"Employee.h"
+	<string.h>
+
+1557502670 /home/wael/Desktop/CompanyFiles/include/Database.h
+	<iostream>
+
